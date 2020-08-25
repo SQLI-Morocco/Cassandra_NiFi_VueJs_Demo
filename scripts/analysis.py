@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 
-rootdir = '/Users/bibi/Sources/covid19/data/jhp-data-git/csse_covid_19_data/csse_covid_19_daily_reports/'
-targetdir = '/Users/bibi/Sources/covid19/data/jhp-data-git/csse_covid_19_data/csse_covid_19_daily_reports/cleaned'
+rootdir = '/covid19/data/jhp-data-git/csse_covid_19_data/csse_covid_19_daily_reports/'
+targetdir = '/covid19/data/jhp-data-git/csse_covid_19_data/csse_covid_19_daily_reports/cleaned'
 extensions = ('.csv')
 
 for subdir, dirs, files in os.walk(rootdir):
