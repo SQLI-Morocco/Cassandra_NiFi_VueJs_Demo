@@ -95,6 +95,8 @@ You can learn from this demo by doing some of the suggested exercies, you will f
 
 **_Lets get started!_**
 
+## Cassandra
+
 https://github.com/apache/cassandra#getting-started
 
 To follow first Cassandra Database principle: design your data model based on your queries, lets first start by sketching how we want our UI to look like and extract the main queries.
@@ -182,7 +184,9 @@ CREATE TABLE coronavirus.region_data_global_latest (
 
 As an exercies, you can add a new table for querying the available region and sub region with their dependencies.
 
-_Now let's populate our table with the data using NiFi._
+## NiFi
+
+_Let's populate our table with the data using NiFi._
 
 First, start by [installing and running your instance of NiFi](http://nifi.apache.org/docs/nifi-docs/html/getting-started.html#downloading-and-installing-nifi). Once started, open your browser and navigate to your configured url.
 
@@ -283,7 +287,9 @@ Once you have imported your Flow you can run the groups to start populating your
 
 As an exercies, you can add processors to populate the regions table with available regions and sub regions with their dependencies.
 
-_Now Lets expose our data through API using SpringBoot_
+## SpringBoot
+
+_Lets expose our data through API using SpringBoot_
 
 The project starter pom was generated using [Spring Initialzr](https://start.spring.io/). If you are new to spring boot a good start is to follow this excellent [guide](https://spring.io/guides/gs/spring-boot/).
 
