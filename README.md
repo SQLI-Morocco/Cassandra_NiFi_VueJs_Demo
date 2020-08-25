@@ -101,7 +101,7 @@ To follow first Cassandra Database principle: design your data model based on yo
 
 Using [Excalidraw](https://excalidraw.com/) we obtain the following sketch:
 
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/dashboard-sketch.png)
+![Dashboard Sketch](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard-sketch.png)
 
 The following queries can be extracted from this sketch:
 
@@ -188,13 +188,13 @@ First, start by [installing and running your instance of NiFi](http://nifi.apach
 
 For the demo, we need to create two separate groups: Hourly and Daily
 
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/nifi-groups.png)
+![Nifi Groups](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-groups2.png)
 
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/nifi-daily-group1.png)
+![Nifi Daily Group](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-daily-group3.png)
 
 The flow described is available in the nifi folder and can be uploaded throught the mouse context menu.
 
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/nifi-mouse-menu.png)
+![Context Menu](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-mouse-menu.png)
 
 The demo show case the usage of Groovy to generate the required date to be loaded as separate flows:
 
@@ -330,11 +330,9 @@ Once that is done, you can start development by compiling and using hot-reloads 
 yarn serve --port 4242
 ```
 
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/dashboard1.png)
+![Dashboard 1](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard1.png)
 
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/dashboard3.png)
-
-![UI](https://raw.githubusercontent.com/nabil/yacovida/master/content/images/nifi-hourly-group.png)
+![Dashboard 2](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard3.png)
 
 Once you are ready to publish your site, you can compiles and minifies for production
 
