@@ -188,7 +188,9 @@ First, start by [installing and running your instance of NiFi](http://nifi.apach
 
 For the demo, we need to create two separate groups: Hourly and Daily
 
-![Nifi Groups](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-groups.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-groups.jpg">
+</p>
 
 ![Nifi Hourly Group](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-hourly-group.jpg)
 
@@ -196,7 +198,9 @@ For the demo, we need to create two separate groups: Hourly and Daily
 
 The flow described is available in the nifi folder and can be uploaded throught the mouse context menu.
 
-![Context Menu](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-mouse-menu.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-mouse-menu.jpg">
+</p>
 
 The demo show case the usage of Groovy to generate the required date to be loaded as separate flows:
 

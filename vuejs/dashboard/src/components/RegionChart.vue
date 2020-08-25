@@ -200,8 +200,8 @@ export default {
             .then((response) => {
               this.$apiData.push({
                 name: r.name,
-                data: [...response.data],
-                daily: this.getDailyDataPoints([...response.data]),
+                data: response.data,
+                daily: this.getDailyDataPoints(response.data),
               });
             })
             .then(() => {
@@ -227,81 +227,37 @@ export default {
     getDailyDataPoints: function(data) {
       var arrayLength = data.length;
       var dailyDataPoints = [];
-      dailyDataPoints.push({
-        deaths: {
-          value: 0,
-        },
-        active: {
-          value: 0,
-        },
-        confirmed: {
-          value: 0,
-        },
-        recovered: {
-          value: 0,
-        },
-        dateRecorded: data[0].dateRecorded,
-      });
-      for (var i = 1; i < arrayLength; i++) {
-        if (i + 1 <= arrayLength) {
-          console.log(data[i]);
+      for (var i = 0; i < arrayLength; i++) {
+        if (i + 1 < arrayLength) {
           dailyDataPoints.push({
             active: {
               value: this.getDailyValue(
                 data[i].active.value,
-                data[i - 1].active.value
+                data[i + 1].active.value
               ),
             },
             deaths: {
               value: this.getDailyValue(
                 data[i].deaths.value,
-                data[i - 1].deaths.value
+                data[i + 1].deaths.value
               ),
             },
             confirmed: {
               value: this.getDailyValue(
                 data[i].confirmed.value,
-                data[i - 1].confirmed.value
+                data[i + 1].confirmed.value
               ),
             },
             recovered: {
               value: this.getDailyValue(
                 data[i].recovered.value,
-                data[i - 1].recovered.value
+                data[i + 1].recovered.value
               ),
             },
             dateRecorded: data[i].dateRecorded,
           });
           continue;
         }
-
-        dailyDataPoints.push({
-          deaths: {
-            value: this.getDailyValue(
-              data[i + 1].deaths.value,
-              data[i].deaths.value
-            ),
-          },
-          active: {
-            value: this.getDailyValue(
-              data[i + 1].active.value,
-              data[i].active.value
-            ),
-          },
-          confirmed: {
-            value: this.getDailyValue(
-              data[i + 1].confirmed.value,
-              data[i].confirmed.value
-            ),
-          },
-          recovered: {
-            value: this.getDailyValue(
-              data[i + 1].recovered.value,
-              data[i].recovered.value
-            ),
-          },
-          dateRecorded: data[i].dateRecorded,
-        });
       }
       return dailyDataPoints;
     },
