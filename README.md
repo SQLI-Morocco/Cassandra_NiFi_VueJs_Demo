@@ -188,7 +188,9 @@ First, start by [installing and running your instance of NiFi](http://nifi.apach
 
 For the demo, we need to create two separate groups: Hourly and Daily
 
-![Nifi Groups](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-groups2.png)
+![Nifi Groups](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-groups.png)
+
+![Nifi Hourly Group](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-hourly-group.jpg)
 
 ![Nifi Daily Group](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-daily-group3.png)
 
@@ -330,9 +332,9 @@ Once that is done, you can start development by compiling and using hot-reloads 
 yarn serve --port 4242
 ```
 
-![Dashboard 1](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard1.png)
+![Dashboard 1](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard1.jpg)
 
-![Dashboard 2](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard3.png)
+A live version is available for demo [here](https://nabil.github.io/yacovida/).
 
 Once you are ready to publish your site, you can compiles and minifies for production
 
@@ -367,3 +369,4 @@ As an exercices you can add the option to push the resulting file in an [S3](htt
 **References**
 
 - https://www.datastax.com/blog/2015/02/basic-rules-cassandra-data-modeling
+- https://www.datastax.com/blog/2019/03/apache-cassandratm-four-interesting-facts

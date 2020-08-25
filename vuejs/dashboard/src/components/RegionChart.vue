@@ -104,12 +104,9 @@ export default {
       this.toggleMetric(metric);
     });
 
-    console.log(this.$apiData.length + ' ' + this.chartRegions.length);
     if (!this.allRequiredRegionDataLoaded()) {
-      console.log('mount and fill data');
       this.fillData(() => this.drawChart());
     } else {
-      console.log('mount and draw');
       this.drawChart();
     }
   },
@@ -161,7 +158,6 @@ export default {
     },
     getCurrentRegionData: function() {},
     drawChart: function() {
-      console.log('drawChart');
       this.$set(this.loaded, 'status', false);
       this.datacollection.datasets = [];
       var regionApiData = {};
@@ -192,7 +188,6 @@ export default {
       this.$refs.chart.renderChart(this.datacollection, this.options);
     },
     fillData: function(callback) {
-      console.log('fill data started');
       var regionDataLoaded = 0;
       var regionDataToLoad = 0;
       this.chartRegions.forEach((r) => {
@@ -205,17 +200,13 @@ export default {
             .then((response) => {
               this.$apiData.push({
                 name: r.name,
-                data: response.data,
-                daily: this.getDailyDataPoints(response.data),
+                data: [...response.data],
+                daily: this.getDailyDataPoints([...response.data]),
               });
             })
             .then(() => {
               regionDataLoaded++;
-              console.log(
-                'data loaded region: ' + r.name + ' count: ' + regionDataLoaded
-              );
               if (regionDataToLoad == regionDataLoaded) {
-                console.log('call back');
                 callback();
               }
             })
@@ -225,7 +216,6 @@ export default {
     },
     toggleMetric: function(metric) {
       this.metrics[metric.id] = metric;
-      this.drawChart();
     },
     getDailyValue: function(d1, d2) {
       let r = d1 - d2;
@@ -254,17 +244,18 @@ export default {
       });
       for (var i = 1; i < arrayLength; i++) {
         if (i + 1 <= arrayLength) {
+          console.log(data[i]);
           dailyDataPoints.push({
-            deaths: {
-              value: this.getDailyValue(
-                data[i].deaths.value,
-                data[i - 1].deaths.value
-              ),
-            },
             active: {
               value: this.getDailyValue(
                 data[i].active.value,
                 data[i - 1].active.value
+              ),
+            },
+            deaths: {
+              value: this.getDailyValue(
+                data[i].deaths.value,
+                data[i - 1].deaths.value
               ),
             },
             confirmed: {
