@@ -1,0 +1,23 @@
+{
+    "type" : "record",
+    "namespace" : "coronavirus",
+    "name" : "region_data_timeseries_global_latest_v1",
+    "fields" : [
+        {"name" : "province_state" , "type" : "string", "default": "NA"},
+        {"name" : "country_region" , "type" : "string"},
+        {"name" : "last_update" , "type": { 
+                "type": "long", 
+                  "logicalType": "timestamp-millis" 
+                }, "default": 0
+        },
+        {"name" : "lat" , "type" : "float", "default": 0},
+        {"name" : "long_" , "type" : "float", "default": 0},
+        {"name" : "active" , "type" : "long", "default": 0},
+        {"name" : "confirmed" , "type" : "long", "default": 0},
+        {"name" : "recovered" , "type" : "long", "default": 0},
+        {"name" : "deaths" , "type" : "long", "default": 0},
+        {"name" : "admin2" , "type" : "string", "default": "NA"},
+        {"name" : "fips" , "type" : "string"},
+        {"name" : "combined_key" , "type" : "string"}
+     ]
+}
