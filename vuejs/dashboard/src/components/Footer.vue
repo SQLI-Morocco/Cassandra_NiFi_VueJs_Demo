@@ -13,7 +13,7 @@
           >COVID-19 Data Repository</a
         >
         provided by the Center for Systems Science and Engineering (CSSE) at
-        Johns Hopkins University. >
+        Johns Hopkins University.
       </p>
     </div>
   </footer>

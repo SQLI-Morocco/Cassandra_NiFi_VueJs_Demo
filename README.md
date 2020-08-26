@@ -97,8 +97,6 @@ You can learn from this demo by doing some of the suggested exercies, you will f
 
 ## Cassandra
 
-https://github.com/apache/cassandra#getting-started
-
 To follow first Cassandra Database principle: design your data model based on your queries, lets first start by sketching how we want our UI to look like and extract the main queries.
 
 Using [Excalidraw](https://excalidraw.com/) we obtain the following sketch:
