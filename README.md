@@ -223,11 +223,7 @@ With a simple change to the partition key you can highly impact how your data wi
 
 The primary key can be of type simple, based on a [Simple Primary Key](https://docs.datastax.com/en/archived/cql/3.3/cql/cql_using/useSimplePrimaryKeyConcept.html), or [Composite](https://docs.datastax.com/en/archived/cql/3.3/cql/cql_using/useCompositePartitionKeyConcept.html). This type of date structure make Cassandra well adapted for time series data storage.
 
-|                                                                                                                      |                                                                                                                                                                                                                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/alert.png"> | A badly designed primary key put you at risk of losing data as all rows having the same primary key will be overwritten during insertion, this is often an error that occurs when starting to use Cassandra. Thus, designing an adequate primary key will help avoid important data loss during insertion of data. |
-
-|
+/!\ A badly designed primary key put you at risk of losing data as all rows having the same primary key will be overwritten during insertion, this is often an error that occurs when starting to use Cassandra. Thus, designing an adequate primary key will help avoid important data loss during insertion of data.
 
 As an exercies, you can add a new table for querying the available region and sub region with their dependencies.
 
