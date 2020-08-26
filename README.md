@@ -2,7 +2,7 @@
 
 Cassandra is a leader-less distributed NoSQL database with a partitioned wide column storage model. This blog is the first part of a **two part demo** around Cassandra Database. The goal of part 1 is to showcase the usage of Cassandra in a data ingestion/data pipeline and quering context.
 
-This repo contains a fully working example of the demo, in order to build the solution, you will find the following artefacts:
+This repo contains a fully working example **developed from scratch for this demo, no theme used or existing code as used** in order to build the solution, you will find the following artefacts:
 
 - Nifi Data flow supporting daily and hourly data pull into Cassandra.
 - SpringBoot REST APIs using SpringData for exposing the data through API calls.
@@ -75,7 +75,7 @@ For more fun facts on Cassandra, expand the list below:
 
 **NiFi**
 
-NiFi is a powerfull Flow Based Programming software designed for [massive](https://blog.cloudera.com/benchmarking-nifi-performance-and-scalability/) data flow from any source to any destination. Based on Java, it support scripting and extension through adding new Processors on top of its already rich 286 Processors, 84 Controller Services 15 and reporting tasks!
+NiFi is a powerful Flow Based Programming software designed for [massive](https://blog.cloudera.com/benchmarking-nifi-performance-and-scalability/) data flow from any source to any destination. Based on Java, it support scripting and extension through adding new Processors on top of its already rich 286 Processors, 84 Controller Services 15 and reporting tasks!
 
 **SpringBoot**/**SpringData**
 
@@ -124,7 +124,7 @@ When you analyze the files from the different refresh group you can notice that 
 
 We will only focus on the data we need for our dashboard, thus we will use only the daily data points.
 
-Once your instance of Cassandra is [intalled](https://cassandra.apache.org/doc/latest/getting_started/installing.html), start your [cql shell](https://cassandra.apache.org/doc/latest/getting_started/querying.html) and run the commande below.
+Once your instance of Cassandra is [installed](https://cassandra.apache.org/doc/latest/getting_started/installing.html), start your [cql shell](https://cassandra.apache.org/doc/latest/getting_started/querying.html) and run the commande below.
 
 First let's create a keyspace with a [SimpleStrategy](https://docs.datastax.com/en/cassandra-oss/3.x/cassandra/architecture/archDataDistributeReplication.html) with a replication factor of 1 as we will be using one node only, this can be modified at later stage. For the Strategy, its recommended to go with a [NetworkTopologyStrategy](https://docs.datastax.com/en/cassandra-oss/3.x/cassandra/operations/opsChangeKSStrategy.html) for production usage.
 
@@ -235,7 +235,7 @@ Const.lastUpdate = d2
 
 This ensure that only the initial call is loading all the data.
 
-The demo also shows a simple methode to cleanup the received date based on different date format:
+The demo also shows a simple method to cleanup the received date based on different date format:
 
 ```groovy
 import java.text.ParseException
@@ -299,8 +299,7 @@ In order for the front-end to retreive the necessary data to build UI we are exp
 
 The application architecture is based on the [Ports And Adapters Architecture](http://wiki.c2.com/?HexagonalArchitecture), more reading [here](https://alistair.cockburn.us/hexagonal-architecture/). We are also providing an ArchUnit test to verify some of the compliance.
 
-As an exercices modify the HealthCheckResource to verify database status
-As an exercices you can add the region resources to expose regions and sub regions information
+As an exercice modify the HealthCheckResource to verify database status and/or add the region resources to expose regions and sub regions information
 
 Visit the application.properties files and ensure the setting are aligned with your configuration:
 
