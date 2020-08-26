@@ -215,6 +215,20 @@ CREATE TABLE coronavirus.region_data_global_latest (
 ) WITH CLUSTERING ORDER BY (combined_key ASC);
 ```
 
+With a simple change to the partition key you can highly impact how your data will be distributed across the cluster physical nodes. This can have a significative impact on the sizing of the partition depending on the replication factor selected. A detailed explanation of this concept can be found [here](https://dzone.com/articles/cassandra-data-modeling-primary-clustering-partiti).
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/partitionning.jpg">
+</p>
+
+The primary key can be of type simple, based on a [Simple Primary Key](https://docs.datastax.com/en/archived/cql/3.3/cql/cql_using/useSimplePrimaryKeyConcept.html), or [Composite](https://docs.datastax.com/en/archived/cql/3.3/cql/cql_using/useCompositePartitionKeyConcept.html). This type of date structure make Cassandra well adapted for time series data storage.
+
+|                                                                                                                      |                                                                                                                                                                                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/alert.png"> | A badly designed primary key put you at risk of losing data as all rows having the same primary key will be overwritten during insertion, this is often an error that occurs when starting to use Cassandra. Thus, designing an adequate primary key will help avoid important data loss during insertion of data. |
+
+|
+
 As an exercies, you can add a new table for querying the available region and sub region with their dependencies.
 
 ## NiFi
