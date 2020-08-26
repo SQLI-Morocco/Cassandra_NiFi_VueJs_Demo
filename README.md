@@ -37,15 +37,63 @@ You can check the final result on [this page](https://nabil.github.io/yacovida).
 
 **Cassandra**
 
-The main advantage of Cassandra over the other NoSQL database is its linear scalability to support [high throughput](https://www.datastax.com/blog/2019/03/apache-cassandratm-four-interesting-facts) with [no single point of failure](https://stackoverflow.com/a/21667085).
-
 This section is a tentative compressed introduction to Cassandra with a focus on a list of key facts that are a must-know in order to handle Cassandra in an optimal way.
 
 For an indepth training about Cassandra, a good place to start would be the excellent [Datastax Academy](https://academy.datastax.com/#/) free training/courses and of course the [Apache Cassandra Architecture](https://cassandra.apache.org/doc/latest/architecture/overview.html) documentation.
 
 Another excellent stop would be the [YouTube Datastax Channel](https://www.youtube.com/c/DataStax/videos).
 
-For more fun facts on Cassandra, expand the list below:
+Cassandra is an open source distributed schema-free wide column data store. Initially developped at Facebook and open sourced in 2008, its today a top-level project at the Apache Foundation. The current release is version 3.11 as of April 2020.
+
+The main advantage of Cassandra over the other NoSQL database is its linear scalability to support [high throughput](https://www.datastax.com/blog/2019/03/apache-cassandratm-four-interesting-facts) with [no single point of failure](https://stackoverflow.com/a/21667085).
+
+Cassandra is of type Wide Column data store and support different level of SQL like queries, including full SELECT, DML and DDL statements.
+
+#### Key Features Highlights
+
+<center>
+
+| Feature                       | Available |
+| ----------------------------- | :-------: |
+| Leader-less Architecture      |    Yes    |
+| Decentralized and Symmetrical |    Yes    |
+| Cross-Data Center Replication |    Yes    |
+| Schema-free                   |    Yes    |
+| MapReduce                     |    Yes    |
+| Always On                     |    Yes    |
+| High Write Availability       |    Yes    |
+
+</center>
+
+Cassandra is considered a partition row store with rows organized into tables with a required primary key. In other words, Cassandra will manage the partitioning of the data across multiples nodes. The row store definition means that the data is organized in rows and columns.
+
+An often used comparison to explain how the data is stored in Cassandra is the [SortedMap](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/SortedMap.html) [Data Structure](https://blog.gft.com/blog/2017/01/24/the-distributed-architecture-behind-apache-cassandra/).
+
+We can say that Cassandra store the data in a [sparse, distributed, persistent multi-dimensional sorted map] (http://dbmsmusings.blogspot.com/2010/03/distinguishing-two-major-types-of_29.html):
+
+```Java
+SortedMap<RowKey, SortedMap<ColumnKey, ColumnValue>>
+```
+
+This type of data structure can be complex to design and use, thus it's paramount that one must design carefully the initial data model in order to support the target application queries, both from performance and efficiency standpoint.
+
+Below is a simple analogy between the Relational and the Cassandra data model, it's only intended as a similarity reference, not as an equivalence.
+
+<center>
+
+| Relational Model | Cassandra Model    |
+| ---------------- | ------------------ |
+| Database         | Keyspace           |
+| Table            | Column Family (CF) |
+| Primary Key      | Row Key            |
+| Column Name      | Column Key         |
+| Column Value     | Column Value       |
+
+</center>
+
+A table is created and used in a keyspace. A table can have a simple or a composite primary key, this key can be used to retrieve the data from the table. The order of the composite primary key columns is important since the first column is called the partition key. All rows sharing the same partition key will be stored on the same physical node. The Primary key is also referenced to as the RowKey and can be viewed as the unique identifier of the column family.
+
+### For more fun facts on Cassandra, expand the list below:
 
 <details>
   <Summary>Cassandra Must Know Facts!</Summary>
@@ -377,3 +425,9 @@ As an exercices you can add the option to push the resulting file in an [S3](htt
 
 - https://www.datastax.com/blog/2015/02/basic-rules-cassandra-data-modeling
 - https://www.datastax.com/blog/2019/03/apache-cassandratm-four-interesting-facts
+- Cassandra vs Relational Model | https://www.datastax.com/products/compare/relational-database-vs-nosql
+- DZone | https://dzone.com/articles/introduction-apache-cassandras
+- NoSQL Comparison | https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis
+- Cassandra: The Definitive Guide | https://www.amazon.fr/Cassandra-Definitive-Guide-Distributed-Scale/dp/1098115163
+- Cassandra Apache Github | https://github.com/apache/cassandra
+- PRIMARY KEY's in CQL | https://thelastpickle.com/blog/2013/01/11/primary-keys-in-cql.html
