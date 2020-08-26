@@ -49,9 +49,7 @@ The main advantage of Cassandra over the other NoSQL database is its linear scal
 
 Cassandra is of type Wide Column data store and support different level of SQL like queries, including full SELECT, DML and DDL statements.
 
-#### Key Features Highlights
-
-<center>
+#### Key Features Highlights:
 
 | Feature                       | Available |
 | ----------------------------- | :-------: |
@@ -62,8 +60,6 @@ Cassandra is of type Wide Column data store and support different level of SQL l
 | MapReduce                     |    Yes    |
 | Always On                     |    Yes    |
 | High Write Availability       |    Yes    |
-
-</center>
 
 Cassandra is considered a partition row store with rows organized into tables with a required primary key. In other words, Cassandra will manage the partitioning of the data across multiples nodes. The row store definition means that the data is organized in rows and columns.
 
@@ -93,7 +89,7 @@ Below is a simple analogy between the Relational and the Cassandra data model, i
 
 A table is created and used in a keyspace. A table can have a simple or a composite primary key, this key can be used to retrieve the data from the table. The order of the composite primary key columns is important since the first column is called the partition key. All rows sharing the same partition key will be stored on the same physical node. The Primary key is also referenced to as the RowKey and can be viewed as the unique identifier of the column family.
 
-### For more fun facts on Cassandra, expand the list below:
+#### For more fun facts on Cassandra, expand the list below:
 
 <details>
   <Summary>Cassandra Must Know Facts!</Summary>
