@@ -2,7 +2,7 @@
 
 Cassandra is a leader-less distributed NoSQL database with a partitioned wide column storage model. This blog is the first part of a **two part demo** around Cassandra Database. The goal of part 1 is to showcase the usage of Cassandra in a data ingestion/data pipeline and quering context.
 
-This repo contains a fully working example **developed from scratch for this demo, no theme used or existing code as used** in order to build the solution, you will find the following artefacts:
+This repo contains a fully working example **developed from scratch for this demo, no theme used or existing code was used** in order to build the solution, you will find the following artefacts:
 
 - Nifi Data flow supporting daily and hourly data pull into Cassandra.
 - SpringBoot REST APIs using SpringData for exposing the data through API calls.
