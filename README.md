@@ -89,10 +89,7 @@ Below is a simple analogy between the Relational and the Cassandra data model, i
 
 A table is created and used in a keyspace. A table can have a simple or a composite primary key, this key can be used to retrieve the data from the table. The order of the composite primary key columns is important since the first column is called the partition key. All rows sharing the same partition key will be stored on the same physical node. The Primary key is also referenced to as the RowKey and can be viewed as the unique identifier of the column family.
 
-#### For more fun facts on Cassandra, expand the list below:
-
-<details>
-  <Summary>Cassandra Must Know Facts!</Summary>
+#### More fun facts on Cassandra:
 
 1. [x] It can work with a single node, but obviously you will benefit from its capabilities if you run with a minimum of 3 nodes.
 1. [x] The nodes can be grouped logically in a ring like architecture.
@@ -114,8 +111,6 @@ A table is created and used in a keyspace. A table can have a simple or a compos
 1. [x] Its recommended that your replication factor is an odd number, thus allowing a faster conscensus.
 1. [x] If a node is down in a cluster and the other replica nodes, a [hinted handoff](https://cassandra.apache.org/doc/latest/operating/hints.html) is put in place to buffer the request until the node is back.
 1. [x] By default the hinted handoff duration is 3 hours. The value can be changed but the long the duration, the longer the time required to bring the node back once is up.
-
-</details>
 
 **NiFi**
 
@@ -238,11 +233,17 @@ For the demo, we need to create two separate groups: Hourly and Daily
   <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-groups.jpg">
 </p>
 
+The first group is the hourly refresh of the data:
+
 ![Nifi Hourly Group](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-hourly-group.jpg)
+
+The second group is the daily refresh of the data:
 
 ![Nifi Daily Group](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-daily-group3.png)
 
 The flow described is available in the nifi folder and can be uploaded throught the mouse context menu.
+
+The conext Menu allow to download your flow or upload a template.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/nifi-mouse-menu.jpg">
