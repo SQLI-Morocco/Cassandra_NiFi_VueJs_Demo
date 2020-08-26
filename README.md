@@ -65,7 +65,7 @@ Cassandra is considered a partition row store with rows organized into tables wi
 
 An often used comparison to explain how the data is stored in Cassandra is the [SortedMap](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/SortedMap.html) [Data Structure](https://blog.gft.com/blog/2017/01/24/the-distributed-architecture-behind-apache-cassandra/).
 
-We can say that Cassandra store the data in a [sparse, distributed, persistent multi-dimensional sorted map] (http://dbmsmusings.blogspot.com/2010/03/distinguishing-two-major-types-of_29.html):
+We can say that Cassandra store the data in a [sparse, distributed, persistent multi-dimensional sorted map](http://dbmsmusings.blogspot.com/2010/03/distinguishing-two-major-types-of_29.html):
 
 ```Java
 SortedMap<RowKey, SortedMap<ColumnKey, ColumnValue>>
@@ -73,9 +73,7 @@ SortedMap<RowKey, SortedMap<ColumnKey, ColumnValue>>
 
 This type of data structure can be complex to design and use, thus it's paramount that one must design carefully the initial data model in order to support the target application queries, both from performance and efficiency standpoint.
 
-Below is a simple analogy between the Relational and the Cassandra data model, it's only intended as a similarity reference, not as an equivalence.
-
-<center>
+Below is a simple analogy between the Relational and the Cassandra data model by [Bruno Tinoco](https://blog.gft.com/blog/2017/01/24/the-distributed-architecture-behind-apache-cassandra/), it's only intended as a similarity reference, not as an equivalence.
 
 | Relational Model | Cassandra Model    |
 | ---------------- | ------------------ |
@@ -84,8 +82,6 @@ Below is a simple analogy between the Relational and the Cassandra data model, i
 | Primary Key      | Row Key            |
 | Column Name      | Column Key         |
 | Column Value     | Column Value       |
-
-</center>
 
 A table is created and used in a keyspace. A table can have a simple or a composite primary key, this key can be used to retrieve the data from the table. The order of the composite primary key columns is important since the first column is called the partition key. All rows sharing the same partition key will be stored on the same physical node. The Primary key is also referenced to as the RowKey and can be viewed as the unique identifier of the column family.
 
@@ -420,11 +416,13 @@ As an exercices you can add the option to push the resulting file in an [S3](htt
 
 **References**
 
-- https://www.datastax.com/blog/2015/02/basic-rules-cassandra-data-modeling
-- https://www.datastax.com/blog/2019/03/apache-cassandratm-four-interesting-facts
+- Basic Rules for Data Modeling https://www.datastax.com/blog/2015/02/basic-rules-cassandra-data-modeling
+- Four Interesting Facts https://www.datastax.com/blog/2019/03/apache-cassandratm-four-interesting-facts
 - Cassandra vs Relational Model | https://www.datastax.com/products/compare/relational-database-vs-nosql
 - DZone | https://dzone.com/articles/introduction-apache-cassandras
 - NoSQL Comparison | https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis
 - Cassandra: The Definitive Guide | https://www.amazon.fr/Cassandra-Definitive-Guide-Distributed-Scale/dp/1098115163
 - Cassandra Apache Github | https://github.com/apache/cassandra
 - PRIMARY KEY's in CQL | https://thelastpickle.com/blog/2013/01/11/primary-keys-in-cql.html
+- DBMS Musing http://dbmsmusings.blogspot.com/2010/03/distinguishing-two-major-types-of_29.html
+- The Distributed Architecture Behind Apache Cassandra https://blog.gft.com/blog/2017/01/24/the-distributed-architecture-behind-apache-cassandra/
