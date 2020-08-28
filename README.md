@@ -101,7 +101,6 @@ A table is created and used in a keyspace. A table can have a simple or a compos
 1. [x] A query goal should always be to read from a single partition, the where clause should filter by the partition key.
 1. [x] Its recommended that you store up to [1TB](https://wikitech.wikimedia.org/wiki/Cassandra/Hardware) of data in each node, beyond this value the nodes start to slow down.
 1. [x] You can run up to 3K TPS per core.
-1. [x] A ring should always have an odd number of nodes in order to
 1. [x] Leader-less architecture means that each node can act as a leader (coordinator) node during a specific request. A request can be sent to any node and it will be managed to ensure the request is fullfilled by the required node.
 1. [x] Data is distributed but also replicated, i.e copied on all replica nodes. The number of replication is based on the replication factor RF.
 1. [x] Its recommended that your replication factor is an odd number, thus allowing a faster conscensus.
@@ -391,8 +390,6 @@ yarn serve --port 4242
 ```
 
 ![Dashboard 1](https://raw.githubusercontent.com/SQLI-Morocco/Cassandra_NiFi_VueJs_Demo/master/content/images/dashboard1.jpg)
-
-A live version is available for demo [here](https://nabil.github.io/yacovida/).
 
 Once you are ready to publish your site, you can compiles and minifies for production
 
